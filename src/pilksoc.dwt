@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-gb">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="og:site_name" content="pilk.uk"></meta>
+<meta property="og:title" content="PilkSoft Interactive On-Line">
+<meta property="og:type" content="website" />
+<meta property="og:description" content="The Pepsi and Milk enjoyers society"></meta>
+<!-- #BeginEditable "doctitle" -->
+<title>pilk.uk - The home of Soda and Milk</title>
+<!-- #EndEditable -->
+</head>
+
+<body background="images/leonic.jpg">
+
+<div align="left">
+	<table border="0" width="800" bgcolor="#FFFFFF" cellpadding="3" style="border-collapse: collapse">
+		<tr>
+			<td colspan="3" bgcolor="#66CCFF">
+			<h1>pilk.uk</h1>
+			<p>The home of Soda and Milk </td>
+		</tr>
+		<tr>
+			<td width="25%" valign="top" bgcolor="#CCCCCC" rowspan="2">
+			<h2>Join the society!</h2>
+			<p>Sorry, the sign up form is under construction.</p>
+			<p>
+			<img border="0" src="images/construction.gif" width="192" height="154">&nbsp;<h2>Web Sites</h2>
+			<p>GitHub <a href="https://github.com/pilksoc">
+			http://github.com/pilksoc</a></td>
+			<td width="75%" valign="top" colspan="2">
+			<marquee id="news-ticker"><b>In the news:</b> </div></marquee></td>
+		</tr>
+		<tr>
+			<td width="75%" valign="top" colspan="2" height="100%">
+			<!-- #BeginEditable "content" -->Click to edit here<!-- #EndEditable --></td>
+		</tr>
+		<tr>
+			<td width="75%" colspan="2" valign="top" bgcolor="#C0C0C0">
+			&nbsp;<p><b><i>Copyright PilkSoft 
+			Interactive On-Line (C) 1997-2023</i></b></p>
+			<p><i>Although the utmost care has been 
+			taken to ensure there are no viruses on this website, we recommend 
+			you scan all attachments for viruses after downloading.</i><p>&nbsp;</td>
+			<td width="25%" align="center" rowspan="2" bgcolor="#C0C0C0">
+			<p>
+			<img border="0" src="images/intershare.gif" width="100" height="86"><p>
+			<i><font size="2">Keeping you On-Line since 2023</font></i></td>
+		</tr>
+		<tr>
+			<td bgcolor="#C0C0C0">
+			Test site</td>
+			<td valign="bottom" bgcolor="#C0C0C0">
+			<p align="right">
+			<a href="http://mozilla.com/">
+			<img border="0" src="images/netscape.gif" width="88" height="31"></a> <a href="http://microsoft.com/ie">
+			<img border="0" src="images/iexplore.gif" width="88" height="31"></a></td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+var news = ["Basingstoke - Local man dies of ligma, after missing their CrossCountry train", "Reading - Local youth is caught fare dodging, and is charged £923123.20 by First Great Western"];
+
+document.getElementById("news-ticker").innerHTML = "<b>In the news: </b>" + news[Math.floor(Math.random() * news.length)];
+</script>
+
+</body>
+
+</html>
