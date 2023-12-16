@@ -18,7 +18,12 @@
 	<table border="0" width="800" bgcolor="#FFFFFF" cellpadding="3" style="border-collapse: collapse">
 		<tr align="center">
 			<td colspan="3" bgcolor="#66CCFF">
-			<h1>pilk.uk</h1>
+				<a href="/">
+					<div style="height: 100%; width: 100%;">
+						<h1><font color="#000000">
+						<span style="text-decoration: none">pilk.uk</span></font></h1>
+					</div>
+				</a>
 			</td>
 		</tr>
 		<tr>
