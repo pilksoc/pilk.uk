@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-gb">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="pilkhack.css">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="1" width="800">
+	<tr>
+		<td align="center" class="cta">
+			<h1>Pilkhack 2024</h1>
+			<p>Friday 13th September 2024</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="1" width="100%">
+			<tr>
+				<td colspan="3">
+				<img border="0" src="j0196164.gif" width="190" height="178">This 
+				web site is under construction - Dial back in later :)<p>
+				Alternatively join the next Royal Hackaway:
+				<a href="https://www.royalhackaway.com/">
+				https://www.royalhackaway.com/</a></td>
+			</tr>
+			<tr>
+				<td width="33%">
+				<p align="center">
+				<img border="0" src="j0234657.gif" width="180" height="176"></td>
+				<td width="66%" colspan="2">
+				<h2>Celebrating modern bloat</h2>
+				<p>Hack, hack and away to victory at 
+				Pilkhack 2024, a celebration of dependency hell, useless 
+				workarounds, and the worst that &quot;software&quot; has to offer in 2024</td>
+			</tr>
+			<tr>
+				<td width="66%" colspan="2">
+				<h2>Go where no-one else will</h2>
+				<p>Make it worse, and make it double - Make more bloat and make 
+				more trouble.</td>
+				<td width="33%">
+				<p align="center">
+				<img border="0" src="j0292020.gif" width="197" height="187"></td>
+			</tr>
+			<tr>
+				<td width="33%">&nbsp;</td>
+				<td width="33%">&nbsp;</td>
+				<td width="33%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="33%">&nbsp;</td>
+				<td width="33%">&nbsp;</td>
+				<td width="33%">&nbsp;</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+</div>
+
+</body>
+
+</html>
