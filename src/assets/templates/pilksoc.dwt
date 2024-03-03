@@ -1,6 +1,4 @@
 <html>
-  <!-- #BeginTemplate "assets/templates/pilksoc.dwt" -->
-
   <head>
     <meta http-equiv="Content-Language" content="en-gb" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -11,9 +9,9 @@
       property="og:description"
       content="The Pepsi and Milk enjoyers society" />
     <!-- #BeginEditable "doctitle" -->
-    <title>pilk</title>
+    <title>pilk.uk - The home of Soda and Milk</title>
     <!-- #EndEditable -->
-    <link rel="stylesheet" type="text/css" href="assets/css/pilk.css" />
+    <link rel="stylesheet" type="text/css" href="../css/pilk.css" />
   </head>
 
   <body>
@@ -42,7 +40,7 @@
 
                     <img
                       border="0"
-                      src="images/clipart/construction.gif"
+                      src="../../images/clipart/construction.gif"
                       width="192"
                       height="154" />
                     <h2>Web Sites</h2>
@@ -65,10 +63,9 @@
                       </b>
                     </p>
                     <p>
-                      <b>
-                        Serving absolutely nothing in 322 countries in 754
+                    	<b>Serving absolutely nothing in 322 countries in 754
                         languages
-                      </b>
+                    </b>
                     </p>
                     <p>
                       <i>
@@ -84,14 +81,14 @@
                     <a href="http://mozilla.com/">
                       <img
                         border="0"
-                        src="assets/images/netscape.gif"
+                        src="../../assets/images/netscape.gif"
                         width="88"
                         height="31" />
                     </a>
                     <a href="http://microsoft.com/ie">
                       <img
                         border="0"
-                        src="assets/images/iexplore.gif"
+                        src="../../assets/images/iexplore.gif"
                         width="88"
                         height="31" />
                     </a>
@@ -101,7 +98,7 @@
                   <td align="center" rowspan="2" bgcolor="#C0C0C0">
                     <img
                       border="0"
-                      src="assets/images/clipart/intershare.gif"
+                      src="../../assets/images/clipart/intershare.gif"
                       width="100"
                       height="86" />
                     <br />
@@ -113,18 +110,13 @@
           </td>
           <td valign="top">
             <!-- #BeginEditable "content" -->
-            <h2>404 - File or directory not found</h2>
-            <p>
-              We&#39;re sorry - The file or resource you are looking for could
-              not be found
-              <!-- #EndEditable -->
-            </p>
+            Click to edit here
+            <!-- #EndEditable -->
           </td>
         </tr>
       </table>
     </div>
 
-    <script src="assets/js/news.js"></script>
+    <script src="../js/news.js"></script>
   </body>
-  <!-- #EndTemplate -->
 </html>
