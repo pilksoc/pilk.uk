@@ -16,7 +16,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/kanit": "^5.1.1",
+    "@fontsource/roboto-condensed": "^5.1.1",
     "@mdx-js/react": "^3.1.0",
+    "classnames": "^2.5.1",
     "gatsby": "^5.14.1",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-mdx": "^5.14.0",

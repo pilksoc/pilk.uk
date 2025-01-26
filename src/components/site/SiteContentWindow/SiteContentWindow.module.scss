@@ -1,0 +1,50 @@
+@use "pilk/_size";
+@use "pilk/_colour";
+@use "pilk/_font";
+
+.wrapper {
+  margin: 10px;
+  border-radius: size.$radius;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.fullWidth {
+  display: block;
+}
+
+.titlebar {
+  display: flex;
+  background-color: colour.$bg-colour-3;
+  border-top-left-radius: size.$radius;
+  border-top-right-radius: size.$radius;
+
+  .iconBox {
+    padding: 10px 20px;
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background-color: #ff00bd;
+    }
+  }
+
+  .item {
+    font-family: font.$header-font;
+    background-color: #ff00bd;
+    color: colour.$txt-colour-1;
+    padding: 10px 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-transform: lowercase;
+  }
+}
+
+.content {
+  background-color: white;
+  overflow: hidden;
+  border-bottom-left-radius: size.$radius;
+  border-bottom-right-radius: size.$radius;
+}

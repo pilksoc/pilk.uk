@@ -1,0 +1,43 @@
+@use "pilk/_size";
+@use "pilk/_colour";
+@use "pilk/_font";
+
+.wrapper {
+  background-color: colour.$bg-colour-1;
+  color: colour.$txt-colour-1;
+  font-family: font.$body-font;
+}
+
+.container {
+  @include size.page-width-container;
+  padding-top: size.$padding;
+  padding-bottom: size.$padding;
+  display: flex;
+
+  @include size.if-mobile {
+    flex-direction: column;
+  }
+}
+
+.logo {
+  font-size: 24pt;
+}
+
+.link {
+  color: colour.$txt-colour-1;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: right;
+  gap: size.$flex-gap;
+}
+
+.absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+}

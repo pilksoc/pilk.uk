@@ -1,0 +1,38 @@
+@use "pilk/_size";
+@use "pilk/_colour";
+
+.container {
+  @include size.page-width-container;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.large {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.bg1,
+.bg2,
+.bg3 {
+  overflow: auto;
+}
+.bg1 {
+  background-color: colour.$page-bg-colour-1;
+}
+.bg2 {
+  background-color: colour.$page-bg-colour-2;
+}
+.bg3 {
+  background-color: colour.$page-bg-colour-3;
+}
+.bgWhite {
+  background-color: white;
+}

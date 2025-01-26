@@ -1,0 +1,6 @@
+@use "pilk/_colour";
+
+body {
+  margin: 0;
+  background-color: colour.$page-bg-colour-1;
+}

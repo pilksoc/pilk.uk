@@ -1,0 +1,28 @@
+$page-width: 1100px;
+$padding: 10px;
+$flex-gap: 15px;
+$radius: 8px;
+
+@mixin page-width-container {
+  max-width: $page-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+$mobile-size: 520px;
+$tablet-size: 900px;
+$desktop-size: 1200px;
+
+@mixin if-mobile() {
+  @media screen and (max-width: $mobile-size) {
+    @content;
+  }
+}
+
+@mixin if-tablet() {
+  @media screen and (min-width: $mobile-size) and (max-width: $tablet-size) {
+    @content;
+  }
+}

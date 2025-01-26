@@ -1,0 +1,30 @@
+@use "pilk/_font";
+@use "pilk/_size";
+
+.container {
+  padding: 50px 100px;
+  @include size.if-tablet {
+    padding: 50px;
+  }
+  @include size.if-mobile {
+    padding: 20px;
+    max-width: unset;
+  }
+}
+
+.title {
+  font-size: 56pt;
+  max-width: 650px;
+  font-family: font.$header-font;
+
+  @include size.if-mobile {
+    font-size: 36pt;
+  }
+}
+
+.subtitle {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24pt;
+  font-family: font.$body-font;
+}
