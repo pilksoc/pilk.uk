@@ -22,7 +22,11 @@ export const createPages: GatsbyNode["createPages"] = async (
 
   if (!data?.allFile.edges) throw new Error("not edges");
 
-  for (const file of data.allFile.edges) {
+  const tsxPages = data.allFile.edges.filter(
+    (x) => path.parse(x.node.absolutePath).ext === ".tsx"
+  );
+
+  for (const file of tsxPages) {
     let path = "/" + file.node.relativeDirectory;
     if (file.node.name !== "index") path += file.node.name;
 

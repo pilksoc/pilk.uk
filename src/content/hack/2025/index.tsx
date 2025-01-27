@@ -1,8 +1,8 @@
 import * as React from "react";
 import { SiteContainer } from "../../../components/site/SiteContainer/SiteContainer";
 import { TemplatePilk } from "../../../templates/Pilk/Pilk";
-import danny from "./pilkhack2025.jpg";
 import { SiteSEO } from "../../../components/site/SiteSEO/SiteSEO";
+import danny from "./pilkhack2025.jpg";
 
 const index = () => {
   return (
