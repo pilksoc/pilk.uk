@@ -80,7 +80,7 @@ const PinTheSemicolonOnTheCode = () => {
       setGameState(GameState.SCORE);
     }, 500);
   };
-  const onMouseMove: MouseEventHandler | TouchEventHandler = (e) => {
+  const onMove = (x: number, y: number) => {
     const cursorSemicolonElement = cursorSemicolonRef.current;
     const targetSemicolonElement = targetSemicolonRef.current;
     if (!cursorSemicolonElement) return;
@@ -90,8 +90,8 @@ const PinTheSemicolonOnTheCode = () => {
     const curBound = cursorSemicolonElement.getBoundingClientRect();
     const destBound = targetSemicolonElement.getBoundingClientRect();
     setMousePos({
-      x: e.clientX - curBound.width / 2,
-      y: e.clientY - curBound.height / 2,
+      x: x - curBound.width / 2,
+      y: y - curBound.height / 2,
     });
     setScore(
       Math.sqrt(
@@ -129,8 +129,8 @@ const PinTheSemicolonOnTheCode = () => {
         })}
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
-        onMouseMove={onMouseMove}
-        onTouchMove={onMouseMove}
+        onMouseMove={(e) => onMove(e.clientX, e.clientY)}
+        onTouchMove={(e) => onMove(e.touches[0].clientX, e.touches[0].clientY)}
       >
         <pre className={styles.codeContainer}>
           #include &lt;stdio.h&gt;
