@@ -22,8 +22,8 @@ const config: GatsbyConfig = {
     // "gatsby-plugin-image",
     // "gatsby-plugin-sitemap",
     "gatsby-plugin-mdx",
-    // "gatsby-plugin-sharp",
-    // "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {

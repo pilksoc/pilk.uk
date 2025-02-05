@@ -3,13 +3,12 @@ import { PageJumbotron } from "../components/page/PageJumbotron/PageJumbotron";
 import { SiteContainer } from "../components/site/SiteContainer/SiteContainer";
 import { SiteContentWindow } from "../components/site/SiteContentWindow/SiteContentWindow";
 import { TemplatePilk } from "../templates/Pilk/Pilk";
-import { FlyingToasters } from "../components/fun/FlyingToasters/FlyingToasters";
+import { SiteSEO } from "../components/site/SiteSEO/SiteSEO";
 
 const index = () => {
   return (
-    <TemplatePilk absolute>
-      <FlyingToasters />
-      <SiteContainer height="full">
+    <TemplatePilk>
+      <SiteContainer height="large">
         <SiteContentWindow title="Error" extension=".ini" fullWidth>
           <PageJumbotron
             title="Not Found"
@@ -22,3 +21,5 @@ const index = () => {
 };
 
 export default index;
+
+export const Head = () => <SiteSEO options={{}} />;

@@ -12,7 +12,7 @@ const TemplatePilk = ({
   absolute?: boolean;
 }) => {
   return (
-    <div>
+    <div className="pilk">
       <SiteHeader absolute={absolute} />
       {children}
       <SiteFooter />

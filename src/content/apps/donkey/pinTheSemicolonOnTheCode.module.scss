@@ -1,0 +1,167 @@
+.page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  background-color: rgb(158, 209, 209);
+  user-select: none;
+}
+
+.gameMode {
+}
+.scoreMode {
+}
+
+.homepage,
+.game,
+.score {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.homepage {
+  pointer-events: none;
+  &.homepageMode {
+    opacity: 1;
+    pointer-events: unset;
+  }
+
+  .topText,
+  .bottomText,
+  .semicolonText {
+    position: fixed;
+    left: 50%;
+    font-family: "Comic Sans MS";
+  }
+  .topText {
+    top: 25%;
+    font-size: 72pt;
+    transform: translateX(-50%);
+  }
+  .semicolonText {
+    top: 50%;
+    font-size: 200pt;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-name: bobble;
+    color: blue;
+  }
+  .bottomText {
+    bottom: 25%;
+    font-size: 72pt;
+    transform: translateX(-50%);
+  }
+  .aboutText {
+    position: fixed;
+    left: 0.5em;
+    bottom: 0.5em;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .rays {
+    position: fixed;
+    background: radial-gradient(#59789c, #c6cbfd);
+    mask: repeating-conic-gradient(#000 0% 0.5 * 10%, transparent 0% 10%);
+    width: 150vw;
+    height: 150vw;
+    left: calc((-150vw + 100vw) / 2);
+    top: calc((-150vw + 100vh) / 2);
+    animation: 120s linear infinite rot;
+    transform-origin: center;
+  }
+  .playButton {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 0.5em 2em;
+    transform: translate(-50%, -50%);
+    font-size: 16pt;
+  }
+}
+
+.game {
+  pointer-events: none;
+  &.gameMode,
+  &.scoreMode {
+    opacity: 1;
+    pointer-events: unset;
+  }
+
+  display: flex;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+
+  .codeContainer,
+  .cursorSemicolon {
+    font-size: 70pt;
+  }
+
+  .targetSemicolon {
+    color: grey;
+    animation: 0.5s ease-in-out infinite alternate blink;
+  }
+
+  .cursorSemicolon,
+  .score,
+  .resetGame {
+    position: fixed;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &.mouseDown {
+      opacity: 1;
+    }
+  }
+
+  .score {
+    font-size: 32pt;
+    top: 2em;
+    font-family: "Comic Sans MS";
+  }
+
+  .resetGame {
+    bottom: 2em;
+    font-size: 24pt;
+
+    &.scoreMode {
+      opacity: 1;
+    }
+  }
+}
+
+.audio {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bobble {
+  0% {
+    transform: translateX(-50%) translateY(-60%) rotate(-20deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-60%) rotate(20deg);
+  }
+}
