@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import * as React from "react";
-import { MouseEventHandler, TouchEventHandler, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import * as styles from "./pinTheSemicolonOnTheCode.module.scss";
 import drumroll from "./sounds_drumroll.mp3";
 import success from "./sounds_success.mp3";
