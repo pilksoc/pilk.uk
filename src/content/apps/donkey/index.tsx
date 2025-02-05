@@ -1,6 +1,12 @@
 import classNames from "classnames";
 import * as React from "react";
-import { MouseEventHandler, useState } from "react";
+import {
+  MouseEventHandler,
+  TouchEventHandler,
+  useState,
+  useRef,
+  useMemo,
+} from "react";
 import * as styles from "./pinTheSemicolonOnTheCode.module.scss";
 import drumroll from "./sounds_drumroll.mp3";
 import success from "./sounds_success.mp3";
@@ -18,7 +24,11 @@ enum ClickState {
   RELEASED = "released",
 }
 
-const PinTheSemicolonOnTheCode = () => {
+const PinTheSemicolonOnTheCode = ({
+  location,
+}: {
+  location: Window["location"];
+}) => {
   const [gameState, setGameState] = useState<GameState>(GameState.HOMEPAGE);
   const [clickState, setClickState] = useState<ClickState>(
     ClickState.NOT_CLICKED
@@ -28,10 +38,13 @@ const PinTheSemicolonOnTheCode = () => {
     y: NaN,
   });
   const [score, setScore] = useState<number>(0);
-  const drumrollRef = React.useRef<HTMLAudioElement>(null);
-  const successRef = React.useRef<HTMLAudioElement>(null);
-  const targetSemicolonRef = React.useRef<HTMLSpanElement>(null);
-  const cursorSemicolonRef = React.useRef<HTMLSpanElement>(null);
+  const drumrollRef = useRef<HTMLAudioElement>(null);
+  const successRef = useRef<HTMLAudioElement>(null);
+  const targetSemicolonRef = useRef<HTMLSpanElement>(null);
+  const cursorSemicolonRef = useRef<HTMLSpanElement>(null);
+  const params = useMemo(() => {
+    return new URLSearchParams(location.search);
+  }, [location]);
 
   const onGameStart = () => {
     setGameState(GameState.GAME);
@@ -80,7 +93,7 @@ const PinTheSemicolonOnTheCode = () => {
       setGameState(GameState.SCORE);
     }, 500);
   };
-  const onMouseMove: MouseEventHandler = (e) => {
+  const onMouseMove: MouseEventHandler | TouchEventHandler = (e) => {
     const cursorSemicolonElement = cursorSemicolonRef.current;
     const targetSemicolonElement = targetSemicolonRef.current;
     if (!cursorSemicolonElement) return;
@@ -116,7 +129,10 @@ const PinTheSemicolonOnTheCode = () => {
           Another useless invention by Pilksoft Interactive Online
           <br />
           Audio files from{" "}
-          <a href="https://github.com/bibixx/drumroll">
+          <a
+            href="https://github.com/bibixx/drumroll"
+            className={classNames({ [styles.kiosk]: params.has("kiosk") })}
+          >
             github.com/bibixx/drumroll
           </a>
         </span>
@@ -133,6 +149,7 @@ const PinTheSemicolonOnTheCode = () => {
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
         onMouseMove={onMouseMove}
+        onTouchMove={onMouseMove}
       >
         <pre className={styles.codeContainer}>
           #include &lt;stdio.h&gt;

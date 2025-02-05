@@ -7,16 +7,15 @@
   user-select: none;
 }
 
-.gameMode {
-}
-.scoreMode {
-}
-
 .homepage,
 .game,
 .score {
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.kiosk {
+  pointer-events: none;
 }
 
 .homepage {
