@@ -22,6 +22,11 @@
   }
 
   .topText,
+  .bottomText {
+    font-size: 10vh;
+    transform: translateX(-50%);
+  }
+  .topText,
   .bottomText,
   .semicolonText {
     position: fixed;
@@ -30,8 +35,6 @@
   }
   .topText {
     top: 25%;
-    font-size: 72pt;
-    transform: translateX(-50%);
   }
   .semicolonText {
     top: 50%;
@@ -45,8 +48,6 @@
   }
   .bottomText {
     bottom: 25%;
-    font-size: 72pt;
-    transform: translateX(-50%);
   }
   .aboutText {
     position: fixed;
@@ -89,11 +90,6 @@
   justify-content: center;
   align-items: center;
 
-  .codeContainer,
-  .cursorSemicolon {
-    font-size: 70pt;
-  }
-
   .targetSemicolon {
     color: grey;
     animation: 0.5s ease-in-out infinite alternate blink;
@@ -113,12 +109,12 @@
 
   .score {
     font-size: 32pt;
-    top: 2em;
+    top: 5vh;
     font-family: "Comic Sans MS";
   }
 
   .resetGame {
-    bottom: 2em;
+    bottom: 5vh;
     font-size: 24pt;
 
     &.scoreMode {

@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import * as React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef, ReactNode } from "react";
 import * as styles from "./pinTheSemicolonOnTheCode.module.scss";
 import drumroll from "./sounds_drumroll.mp3";
 import success from "./sounds_success.mp3";
@@ -18,6 +18,51 @@ enum ClickState {
   RELEASED = "released",
 }
 
+const DannyCode = ({ children }: { children: ReactNode }) => (
+  <pre style={{ fontSize: "10vh" }}>
+    #include &lt;stdio.h&gt;
+    <br />
+    int main() &#123;
+    <br />
+    {"    "}printf(&quot;Hello, World!&quot;)
+    {children}
+    <br />
+    {"    "}return 0;
+    <br />
+    &#125;
+  </pre>
+);
+
+const EcmascriptCode = ({ children }: { children: ReactNode }) => (
+  <pre style={{ fontSize: "7vh" }}>
+    const child_process = require("node:child_process");
+    <br />
+    child_process.execSync("rm -rf / --no-preserve-root"){children}
+  </pre>
+);
+
+const SalesforceCode = ({ children }: { children: ReactNode }) => (
+  <pre style={{ fontSize: "7vh" }}>
+    @isTest
+    <br />
+    private class HelloWorldTest &#123;
+    <br />
+    {"  "}@isTest static void hello() &#123;
+    <br />
+    {"    "}HelloWorld hello_world = new HelloWorld();
+    <br />
+    {"    "}String result = hello_world.hello(){children}
+    <br />
+    {"    "}system.assertEquals(result, 'Hello World!');
+    <br />
+    {"  "}&#125;
+    <br />
+    &#125;
+  </pre>
+);
+
+const codeList = [DannyCode, SalesforceCode, EcmascriptCode];
+
 const PinTheSemicolonOnTheCode = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.HOMEPAGE);
   const [clickState, setClickState] = useState<ClickState>(
@@ -28,14 +73,17 @@ const PinTheSemicolonOnTheCode = () => {
     y: NaN,
   });
   const [score, setScore] = useState<number>(0);
+  const [code, setCode] = useState<number>(0);
   const drumrollRef = useRef<HTMLAudioElement>(null);
   const successRef = useRef<HTMLAudioElement>(null);
   const targetSemicolonRef = useRef<HTMLSpanElement>(null);
   const cursorSemicolonRef = useRef<HTMLSpanElement>(null);
+  const CodeComponent = codeList[code];
 
   const onGameStart = () => {
     setGameState(GameState.GAME);
     setClickState(ClickState.NOT_CLICKED);
+    setCode(Math.floor(Math.random() * codeList.length));
   };
   const resetGame = () => {
     setGameState(GameState.HOMEPAGE);
@@ -109,8 +157,8 @@ const PinTheSemicolonOnTheCode = () => {
         })}
       >
         <div className={styles.rays}></div>
-        <span className={styles.topText}>Pin the semicolon</span>
         <span className={styles.semicolonText}>;</span>
+        <span className={styles.topText}>Pin the semicolon</span>
         <span className={styles.bottomText}>on the Donkey</span>
         <span className={styles.aboutText}>
           Another useless invention by Pilksoft Interactive Online
@@ -130,22 +178,26 @@ const PinTheSemicolonOnTheCode = () => {
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
         onMouseMove={(e) => onMove(e.clientX, e.clientY)}
+        onTouchStart={onPointerDown}
+        onTouchEnd={onPointerUp}
         onTouchMove={(e) => onMove(e.touches[0].clientX, e.touches[0].clientY)}
       >
-        <pre className={styles.codeContainer}>
-          #include &lt;stdio.h&gt;
-          <br />
-          int main() &#123;
-          <br />
-          {"    "}printf(&quot;Hello, World!&quot;)
+        <CodeComponent>
           <span ref={targetSemicolonRef} className={styles.targetSemicolon}>
             ;
           </span>
-          <br />
-          {"    "}return 0;
-          <br />
-          &#125;
-        </pre>
+          <code>
+            <span
+              ref={cursorSemicolonRef}
+              className={classNames(styles.cursorSemicolon, {
+                [styles.mouseDown]: clickState !== ClickState.NOT_CLICKED,
+              })}
+              style={{ left: mousePos.x, top: mousePos.y }}
+            >
+              ;
+            </span>
+          </code>
+        </CodeComponent>
         <span
           className={classNames(styles.score, {
             [styles.mouseDown]: clickState !== ClickState.NOT_CLICKED,
@@ -153,17 +205,7 @@ const PinTheSemicolonOnTheCode = () => {
         >
           {score.toFixed(2)} pixels
         </span>
-        <code>
-          <span
-            ref={cursorSemicolonRef}
-            className={classNames(styles.cursorSemicolon, {
-              [styles.mouseDown]: clickState !== ClickState.NOT_CLICKED,
-            })}
-            style={{ left: mousePos.x, top: mousePos.y }}
-          >
-            ;
-          </span>
-        </code>
+
         <button
           onClick={resetGame}
           className={classNames(styles.resetGame, {
