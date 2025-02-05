@@ -14,10 +14,6 @@
   transition: opacity 0.5s;
 }
 
-.kiosk {
-  pointer-events: none;
-}
-
 .homepage {
   pointer-events: none;
   &.homepageMode {

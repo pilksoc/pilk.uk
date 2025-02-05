@@ -1,12 +1,6 @@
 import classNames from "classnames";
 import * as React from "react";
-import {
-  MouseEventHandler,
-  TouchEventHandler,
-  useState,
-  useRef,
-  useMemo,
-} from "react";
+import { MouseEventHandler, TouchEventHandler, useState, useRef } from "react";
 import * as styles from "./pinTheSemicolonOnTheCode.module.scss";
 import drumroll from "./sounds_drumroll.mp3";
 import success from "./sounds_success.mp3";
@@ -24,11 +18,7 @@ enum ClickState {
   RELEASED = "released",
 }
 
-const PinTheSemicolonOnTheCode = ({
-  location,
-}: {
-  location: Window["location"];
-}) => {
+const PinTheSemicolonOnTheCode = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.HOMEPAGE);
   const [clickState, setClickState] = useState<ClickState>(
     ClickState.NOT_CLICKED
@@ -42,9 +32,6 @@ const PinTheSemicolonOnTheCode = ({
   const successRef = useRef<HTMLAudioElement>(null);
   const targetSemicolonRef = useRef<HTMLSpanElement>(null);
   const cursorSemicolonRef = useRef<HTMLSpanElement>(null);
-  const params = useMemo(() => {
-    return new URLSearchParams(location.search);
-  }, [location]);
 
   const onGameStart = () => {
     setGameState(GameState.GAME);
@@ -128,13 +115,7 @@ const PinTheSemicolonOnTheCode = ({
         <span className={styles.aboutText}>
           Another useless invention by Pilksoft Interactive Online
           <br />
-          Audio files from{" "}
-          <a
-            href="https://github.com/bibixx/drumroll"
-            className={classNames({ [styles.kiosk]: params.has("kiosk") })}
-          >
-            github.com/bibixx/drumroll
-          </a>
+          Audio files from github.com/bibixx/drumroll
         </span>
         <button className={styles.playButton} onClick={onGameStart}>
           Play
