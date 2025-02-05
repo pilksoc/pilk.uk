@@ -34,7 +34,7 @@ const DannyCode = ({ children }: { children: ReactNode }) => (
 );
 
 const EcmascriptCode = ({ children }: { children: ReactNode }) => (
-  <pre style={{ fontSize: "7vh" }}>
+  <pre style={{ fontSize: "6vh" }}>
     const child_process = require("node:child_process");
     <br />
     child_process.execSync("rm -rf / --no-preserve-root"){children}
