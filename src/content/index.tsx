@@ -47,6 +47,13 @@ const index = () => {
           <table border={1}>
             <tbody>
               <tr>
+                <td>15th March 2025</td>
+                <td>
+                  Visit Josh in Chest Hair<br />
+                  <i>You know, Chest Hair, near the land of the consonant.</i>
+                </td>
+              </tr>
+              <tr>
                 <td>4th January 2025</td>
                 <td>
                   cocktail party new years good music good vibes BRING UR
